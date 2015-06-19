@@ -40,7 +40,7 @@ public:
 
 QtDcm::QtDcm ( QWidget *parent ) : QWidget ( parent ), d ( new QtDcmPrivate )
 {
-    QTextCodec::setCodecForCStrings ( QTextCodec::codecForName ( "iso" ) );
+    //QTextCodec::setCodecForCStrings ( QTextCodec::codecForName ( "iso" ) );
     setupUi ( this );
     d->mode = QtDcm::CD;
 

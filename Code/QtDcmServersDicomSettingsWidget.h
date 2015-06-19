@@ -23,7 +23,7 @@
 
 #include "qtdcmExports.h"
 #include <QtGui>
-
+#include <QtWidgets>
 #include "ui_qtdcmServersDicomSettingsWidget.h"
 
 

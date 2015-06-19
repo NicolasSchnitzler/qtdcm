@@ -22,6 +22,7 @@
 #define QTDCMDCM2NIISETTINGSWIDGET_H
 
 #include <QtGui>
+#include <QtWidgets>
 #include "ui_qtdcmDcm2niiSettingsWidget.h"
 
 class QtDcmDcm2niiSettingsWidgetPrivate;

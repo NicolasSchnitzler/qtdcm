@@ -220,7 +220,7 @@ void QtDcmManager::updateSerieInfo ( QString eltCount, QString institution, QStr
 void QtDcmManager::clearPreview()
 {
     if ( d->previewWidget )
-        d->previewWidget->imageLabel->setPixmap ( NULL );
+        d->previewWidget->imageLabel->setPixmap ( QPixmap() );
 }
 
 

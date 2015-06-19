@@ -276,7 +276,7 @@ void QtDcmServersDicomSettingsWidget::sendEcho()
     cond = ASC_setAPTitles ( params, aet.toUtf8().data(), serverAet.toUtf8().data(), NULL );
 
     // the DICOM server accepts connections at server.nowhere.com port 104
-    cond = ASC_setPresentationAddresses ( params, hostname.toUtf8().data(), QString ( serverHostname + ":" + serverPort ).toAscii().data() );
+    cond = ASC_setPresentationAddresses ( params, hostname.toUtf8().data(), QString ( serverHostname + ":" + serverPort ).toLatin1().data() );
 
     // list of transfer syntaxes, only a single entry here
     const char* ts[] = { UID_LittleEndianImplicitTransferSyntax };

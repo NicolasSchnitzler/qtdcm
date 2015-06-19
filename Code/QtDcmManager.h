@@ -22,6 +22,7 @@
 
 #include "qtdcmExports.h"
 #include <QtGui>
+#include <QtWidgets>
 #include <QtNetwork>
 
 class QtDcm;

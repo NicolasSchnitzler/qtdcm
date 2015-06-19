@@ -1,10 +1,9 @@
 include (${QTDCM_SOURCE_DIR}/CMake/QtDCMSettings.cmake)
 
-find_package( Qt4 REQUIRED COMPONENTS QtCore QtGui QtNetwork)
-if(QT4_FOUND)
-  set(QT_USE_QTNETWORK true)
-  include(${QT_USE_FILE})
-endif(QT4_FOUND)
+find_package(Qt5Core REQUIRED)
+find_package(Qt5Widgets REQUIRED)
+find_package(Qt5Network REQUIRED)
+find_package(Qt5Gui REQUIRED)
 
 find_package(DCMTK REQUIRED)
 include_directories(${DCMTK_INCLUDE_DIRS})
@@ -88,14 +87,17 @@ set(QTDCM_SRCS
   ${QTDCM_SOURCE_DIR}/Code/QtDcmFindCallback.cpp
 )
 
-qt4_add_resources(QTDCM_RCC_SRCS ${QTDCM_RCCS})
-qt4_wrap_ui( SAMPLE_UI_HDRS ${SAMPLE_UIS})
-qt4_wrap_cpp( SAMPLE_MOC_SRCS ${SAMPLE_MOC_HDRS})
+qt5_add_resources(QTDCM_RCC_SRCS ${QTDCM_RCCS})
+qt5_wrap_ui( SAMPLE_UI_HDRS ${SAMPLE_UIS})
+qt5_wrap_cpp( SAMPLE_MOC_SRCS ${SAMPLE_MOC_HDRS})
 
 include_directories(${CMAKE_BINARY_DIR} ${QTDCM_SOURCE_DIR}/Code/ ${QTDCM_BINARY_DIR}/Code ${ITK_INCLUDE_DIRS} ${VTK_INCLUDE_DIRS} ${DCMTK_INCLUDE_DIR})
 
 set(QTDCM_LIBRARIES
-  ${QT_LIBRARIES} 
+  Qt5::Core
+  Qt5::Gui
+  Qt5::Widgets
+  Qt5::Network 
   ${QT_QTNETWORK_LIBRARY}
   ${DCMTK_LIBRARIES}
   ITKCommon
